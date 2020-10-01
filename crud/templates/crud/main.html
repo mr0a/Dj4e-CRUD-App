@@ -5,5 +5,14 @@
     {% endblock %}
 
     {% block content %}
-        <h1>Hello World</h1>
+        <h1>Basic CRUD App</h1>
+        {% if request.user.is_authenticated %}
+            <ul>
+                <li><p>Try <a href="#">Autos crud</a></p></li>
+                <li><p>Try <a href="#">Cats crud</a></p></li>
+            </ul>
+            <p><a href="{% url 'logout'%}?next={% url 'main' %}">Logout</a></p>
+        {% else %}
+            <p><a href="{% url 'login' %}?next={% url 'main' %}">Please log in</a></p>
+        {% endif %}
     {% endblock %}
