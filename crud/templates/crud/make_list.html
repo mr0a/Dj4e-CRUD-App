@@ -1,0 +1,18 @@
+{% extends 'crud/base.html' %}
+
+{% block title %}
+Makes List
+{% endblock %}
+
+{% block content%}
+    <h1>Makes List</h1>
+    {% for make in object_list %}
+        <ul>
+            <li>{{ make.name }} ( <a href="{% url 'make_update' make.id %}">Update</a> | <a href="{% url 'make_delete' make.id %}">Delete</a>)</li>
+        </ul>
+    {% empty %}
+        <p>There are no makes in the library.</p>
+    {% endfor %}
+    <p><a href="{% url 'make_create' %}">Add a make</a></p>
+    <p><a href="{% url 'autos_all' %}">Back to autos</a></p>
+{% endblock %}

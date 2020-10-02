@@ -1,0 +1,22 @@
+{% extends 'crud/base.html' %}
+
+{% block title %}
+Autos List
+{% endblock %}
+
+{% block content%}
+    <h1>Autos List</h1>
+    {% for auto in object_list %}
+        <ul>
+            <li>{{ auto.nickname }} (<a href="{% url 'autos_update' auto.id %}">Update</a> | <a href="{% url 'autos_delete' auto.id %}">Delete</a>)</li>
+        </ul>
+    {% empty %}
+        <p>There are no autos in the library.</p>
+        {% if not mc%}
+            <p>Please add a make before you add an auto.</p>
+        {% else %}
+            <p><a href="{% url 'autos_create' %}">Add an auto</a></p>
+        {% endif %}
+    {% endfor %}
+    <p><a href="{% url 'make_all' %}">View makes</a> ({{mc}}) | <a href="{% url 'make_create' %}">Add a make</a></p>
+{% endblock %}
