@@ -15,5 +15,4 @@ urlpatterns = [
     path('autos/lookup/create', views.MakeCreate.as_view(), name='make_create'),
     path('autos/lookup/<int:pk>/update', views.MakeUpdate.as_view(), name='make_update'),
     path('autos/lookup/<int:pk>/delete', views.MakeDelete.as_view(), name='make_delete'),
-    path('cats/', views.CatsView.as_view(), name='cats_all'),
 ]

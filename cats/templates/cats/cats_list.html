@@ -1,0 +1,22 @@
+{% extends 'crud/base.html' %}
+
+{% block title %}
+Cats List
+{% endblock %}
+
+{% block content%}
+    <h1>Cats List</h1>
+    {% for cat in object_list %}
+        <ul>
+            <li>{{ cat.nickname }} ({{cat.breed}}) (<a href="{% url 'cats_update' cat.id %}">Update</a> | <a href="{% url 'cats_delete' cat.id %}">Delete</a>)</li>
+        </ul>
+    {% empty %}
+        <p>There are no Cats in the library.</p>
+        {% if not bc%}
+            <p>Please add a breed before you add a cat.</p>
+        {% else %}
+            <p><a href="{% url 'cats_create' %}">Add a cat</a></p>
+        {% endif %}
+    {% endfor %}
+    <p><a href="{% url 'breeds_list' %}">View breeds</a> ({{bc}}) | <a href="{% url 'breeds_create' %}">Add a breed</a></p>
+{% endblock %}

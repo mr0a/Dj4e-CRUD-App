@@ -9,7 +9,7 @@
         {% if request.user.is_authenticated %}
             <ul>
                 <li><p>Try <a href="{% url 'autos_all' %}">Autos crud</a></p></li>
-                <li><p>Try <a href="{% url 'cats_all' %}">Cats crud</a></p></li>
+                <li><p>Try <a href="{% url 'cats_list' %}">Cats crud</a></p></li>
             </ul>
             <p><a href="{% url 'logout'%}?next={% url 'main' %}">Logout</a></p>
         {% else %}

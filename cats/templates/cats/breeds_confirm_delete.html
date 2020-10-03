@@ -1,0 +1,14 @@
+{% extends 'crud/base.html' %}
+
+{% block title%}
+    Delete Breed
+{% endblock %}
+
+{% block content %}
+    <h1>Delete Breed</h1>
+    <p>Are you sure to delete the breed: {{ breed }} ?</p>
+    <form method='post'>
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete.">
+    </form>
+{% endblock %}

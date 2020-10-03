@@ -1,0 +1,20 @@
+{% extends 'crud/base.html' %}
+
+{% block title%}
+    Breeds List
+{% endblock%}
+
+{% block content%}
+    <h1>Breeds List</h1>
+    {% if object_list%}
+    <ul>
+        {% for breed in object_list%}
+            <li> {{breed.name}} ( <a href="{% url 'breeds_update' breed.id%}">Update</a>| <a href="{% url 'breeds_delete' breed.id %}">Delete</a>)</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no breeds in the library.</p>
+    {% endif %}
+    <p><a href="{% url 'breeds_create' %}">Add a breed</a></p>
+    <p><a href="{% url 'cats_list' %}">Back to cats</a></p>
+{% endblock %}
