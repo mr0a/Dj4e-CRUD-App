@@ -6,7 +6,6 @@ from . import views
 urlpatterns = [
     path('', TemplateView.as_view(template_name = 'crud/main.html'), name = 'main'),
     # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/', include('django.contrib.auth.urls')),
     path('autos/', views.AutosView.as_view(), name='autos_all'),
     path('autos/main/create', views.AutosCreate.as_view(), name='autos_create'),
     path('autos/main/<int:pk>/update', views.AutosUpdate.as_view(), name='autos_update'),

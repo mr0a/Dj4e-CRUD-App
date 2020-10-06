@@ -1,0 +1,9 @@
+{% extends 'ads/base.html' %}
+{% block content %}
+<h1>Article Delete</h1>
+<form method='post'>
+    {% csrf_token %}
+    <p>Are You sure to delete: {{article}}?</p>
+    <input type="submit" value="Yes, delete.">
+</form>
+{% endblock %}

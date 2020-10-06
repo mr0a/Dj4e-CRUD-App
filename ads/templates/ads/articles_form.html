@@ -1,0 +1,12 @@
+{% extends 'ads/base.html' %}
+{% block content %}
+<h1>Article Create</h1>
+<form method="post">
+    <table>
+        {% csrf_token %}
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Submit">
+    <input type="submit" value="Cancel" onclick="window.location='{% url 'ads:all' %}';return false;">
+</form>
+{% endblock %}

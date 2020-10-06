@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'crud.apps.CrudConfig',
     'cats.apps.CatsConfig',
+    'ads.apps.AdsConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
