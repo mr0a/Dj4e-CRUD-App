@@ -37,11 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Apps
     'polls.apps.PollsConfig',
     'home.apps.HomeConfig',
     'crud.apps.CrudConfig',
     'cats.apps.CatsConfig',
     'ads.apps.AdsConfig',
+    'unesco.apps.UnescoConfig',
+
+    #Extensions
+    'django_extensions',
     'crispy_forms',
 ]
 
